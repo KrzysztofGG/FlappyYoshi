@@ -14,6 +14,7 @@ public class Music {
             audioStream = AudioSystem.getAudioInputStream(musicFile);
             clip = AudioSystem.getClip();
             clip.open(audioStream);
+
             FloatControl gainControl =
                     (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             gainControl.setValue(volume);
