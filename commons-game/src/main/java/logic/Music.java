@@ -8,7 +8,7 @@ public class Music {
     AudioInputStream audioStream;
     Clip clip;
 
-    public void playMusic(String file, float volume){
+    public void playMusic(String file, float volume, boolean isLoop){
         try{
             musicFile = new File(file);
             audioStream = AudioSystem.getAudioInputStream(musicFile);
@@ -18,6 +18,8 @@ public class Music {
                     (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             gainControl.setValue(volume);
             clip.start();
+            if(isLoop)
+                clip.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             throw new RuntimeException(e);
         }

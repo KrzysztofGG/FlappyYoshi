@@ -65,7 +65,7 @@ public class Player {
             if(!isAlive){
                 game.setGameOver(true);
                 if(!deathSoundPlayed){
-                    game.getMusic().playMusic("src/main/resources/sounds/death_sound.wav", 5.0f);
+                    game.getMusic().playMusic("src/main/resources/sounds/death_sound.wav", 5.0f, false);
                     deathSoundPlayed = true;
                 }
             }
@@ -97,7 +97,7 @@ public class Player {
         y += ySpeed;
         ySpeed += weight;
         if(kh.keysPressed.containsKey(KeyEvent.VK_SPACE)){
-            game.getMusic().playMusic("src/main/resources/sounds/jump_sound.wav", -15.0f );
+            game.getMusic().playMusic("src/main/resources/sounds/jump_sound.wav", -15.0f, false);
             explosions.add(new Explosion(this.x, this.y));
             ySpeed = -maxYSpeed;
             kh.keysPressed.remove(KeyEvent.VK_SPACE);

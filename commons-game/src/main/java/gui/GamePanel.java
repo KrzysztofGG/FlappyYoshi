@@ -66,7 +66,7 @@ public class GamePanel extends JPanel implements Runnable{
         columns = new ArrayList<>();
         bg = new Background(this);
         music = new Music();
-        music.playMusic("src/main/resources/sounds/background_music.wav", -10.0f);
+        music.playMusic("src/main/resources/sounds/background_music.wav", -10.0f, true);
 
     }
 
