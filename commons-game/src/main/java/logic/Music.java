@@ -18,8 +18,10 @@ public class Music {
                     (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             gainControl.setValue(volume);
             clip.start();
+
             if(isLoop)
                 clip.loop(Clip.LOOP_CONTINUOUSLY);
+
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             throw new RuntimeException(e);
         }
