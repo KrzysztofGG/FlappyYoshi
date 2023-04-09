@@ -45,7 +45,7 @@
 
                     <archive>
                         <manifest>
-                            <mainClass>com.gora.Main</mainClass>
+                            <mainClass>main.Main</mainClass>
                         </manifest>
                     </archive>
 
